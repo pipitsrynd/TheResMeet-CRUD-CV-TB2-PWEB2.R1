@@ -41,12 +41,17 @@
                                     <?php foreach ($rooms as $key => $room): ?>
                                         <tr>
                                             <td><?= $key+1 ?></td>
-                                            <td><?= $room['name'] ?></td>
+                                            <td><?= $room['room_name'] ?></td>
                                             <td><?= $room['slug'] ?></td>
                                             <td><?= $room['description'] ?></td>
                                             <td><?= $room['num_person'] ?></td>
-                                            <td><div class="badge badge-success">Completed</div></td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                                            <td><?= $room['category_name'] ?></td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <a href="/internal/rooms/edit/<?= $room['id'] ?>" class="btn btn-warning white">Edit</a>
+                                                    <a href="/internal/rooms/delete/<?= $room['id'] ?>" class="btn btn-danger btn-delete" data-id="<?= $room['id'] ?>">Delete</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -61,6 +66,27 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
+    <script type="text/javascript">
+        $(function() {
+            $('.btn-delete').click(function(e) {
+                e.preventDefault();
+                const href = $(this).attr('href');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.location.href = href;
+                    }
+                })
+            });
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $('#datatable').DataTable();

@@ -38,7 +38,12 @@
                             <div class="form-group row">
                                 <label for="room_category_id" class="col-sm-2 col-form-label">Room Category</label>
                                 <div class="col-sm-10">
-                                    <input type="number" min="1" max="99" name="room_category_id" class="form-control" id="room_category_id" value="" placeholder="10">
+                                    <select class="form-control" name="room_category_id" id="exampleFormControlSelect1">
+                                        <option value="" selected disabled>-- Choose Category --</option>
+                                        <?php foreach($categories as $key => $category) : ?>
+                                            <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row mb-5">

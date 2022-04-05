@@ -45,6 +45,9 @@ $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function
     $routes->get('rooms', 'RoomController::index');
     $routes->get('rooms/create', 'RoomController::create');
     $routes->post('rooms/store', 'RoomController::store');
+    $routes->get('rooms/edit/(:num)', 'RoomController::edit/$1');
+    $routes->post('rooms/update/(:num)', 'RoomController::update/$1');
+    $routes->get('rooms/delete/(:num)', 'RoomController::delete/$1');
 });
 /*
  * --------------------------------------------------------------------

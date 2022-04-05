@@ -1,0 +1,49 @@
+ERROR - 2022-04-04 13:23:31 --> Error connecting to the database: No such file or directory
+ERROR - 2022-04-04 13:53:49 --> Table 'rooms' already exists
+CRITICAL - 2022-04-04 15:12:41 --> `App\Models\Room` model class does not have a valid dateFormat.
+#0 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/BaseModel.php(1196): CodeIgniter\Exceptions\ModelException::forNoDateFormat('App\\Models\\Room')
+#1 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/BaseModel.php(1163): CodeIgniter\BaseModel->intToDate(1649103161)
+#2 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/BaseModel.php(722): CodeIgniter\BaseModel->setDate()
+#3 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#4 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#5 /Applications/MAMP/htdocs/meeting_room_reservation/app/Controllers/Internal/RoomController.php(37): CodeIgniter\BaseModel->save(Array)
+#6 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(832): App\Controllers\Internal\RoomController->store()
+#7 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Internal\RoomController))
+#8 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/meeting_room_reservation/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2022-04-04 15:13:03 -->  route cannot be found while reverse-routing.
+#0 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/HTTP/RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 /Applications/MAMP/htdocs/meeting_room_reservation/app/Controllers/Internal/RoomController.php(40): redirect('interna/rooms')
+#3 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(832): App\Controllers\Internal\RoomController->store()
+#4 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Internal\RoomController))
+#5 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/MAMP/htdocs/meeting_room_reservation/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/Applications/M...')
+#8 {main}
+CRITICAL - 2022-04-04 15:16:02 --> Trying to get property 'name' of non-object
+#0 /Applications/MAMP/htdocs/meeting_room_reservation/app/Views/backend/pages/rooms/index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Applications/M...', 44, Array)
+#1 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/View/View.php(210): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('backend/pages/r...', Array, true)
+#4 /Applications/MAMP/htdocs/meeting_room_reservation/app/Controllers/Internal/RoomController.php(21): view('backend/pages/r...', Array)
+#5 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(832): App\Controllers\Internal\RoomController->index()
+#6 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Internal\RoomController))
+#7 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/meeting_room_reservation/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/Applications/M...')
+#10 {main}
+CRITICAL - 2022-04-04 15:16:26 --> Trying to get property 'name' of non-object
+#0 /Applications/MAMP/htdocs/meeting_room_reservation/app/Views/backend/pages/rooms/index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Applications/M...', 44, Array)
+#1 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/View/View.php(210): include('/Applications/M...')
+#2 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('backend/pages/r...', Array, true)
+#4 /Applications/MAMP/htdocs/meeting_room_reservation/app/Controllers/Internal/RoomController.php(21): view('backend/pages/r...', Array)
+#5 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(832): App\Controllers\Internal\RoomController->index()
+#6 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Internal\RoomController))
+#7 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/meeting_room_reservation/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/Applications/M...')
+#10 {main}

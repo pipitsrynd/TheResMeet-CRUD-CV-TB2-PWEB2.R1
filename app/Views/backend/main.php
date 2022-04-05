@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+<!--    <link rel="stylesheet" href="--><?//= base_url('node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css') ?><!--">-->
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/components.css') ?>">
+    <script src="https://cdn.tiny.cloud/1/539lc6i6yslut2hyntxzu7933hwinyhuylydlefnhuyltybr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body>
@@ -26,14 +29,6 @@
         <!-- Main Content -->
         <div class="main-content">
             <?= $this->renderSection('content'); ?>
-            <section class="section">
-                <div class="section-header">
-                    <h1>Blank Page</h1>
-                </div>
-
-                <div class="section-body">
-                </div>
-            </section>
         </div>
 
         <?= $this->include('backend/templates/footer'); ?>
@@ -49,10 +44,14 @@
 <script src="<?= base_url('assets/js/stisla.js') ?>"></script>
 
 <!-- JS Libraies -->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 
 <!-- Template JS File -->
 <script src="<?= base_url('assets/js/scripts.js') ?>"></script>
 <script src="<?= base_url('assets/js/custom.js') ?>"></script>
+
+<?= $this->renderSection('js'); ?>
 
 <!-- Page Specific JS File -->
 </body>

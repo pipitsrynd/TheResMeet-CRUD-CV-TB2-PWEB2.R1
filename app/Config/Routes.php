@@ -32,8 +32,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->group('internal', function ($routes) {
-    $routes->add('/', 'Admin\Users::index');
+$routes->group("internal", ["namespace" => "App\Controllers\Internal"], function($routes){
+    $routes->get('rooms', 'RoomController::index');
+    $routes->get('rooms/create', 'RoomController::create');
+    $routes->add('rooms/store', 'RoomController::store');
 });
 /*
  * --------------------------------------------------------------------

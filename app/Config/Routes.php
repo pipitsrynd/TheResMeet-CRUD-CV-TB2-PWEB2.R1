@@ -33,9 +33,18 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function($routes){
+    //Room Category
+    $routes->get('room_categories','RoomCategoryController::index');
+    $routes->get('room_categories/create', 'RoomCategoryController::create');
+    $routes->post('room_categories/store', 'RoomCategoryController::store');
+    $routes->get('room_categories/edit/(:num)', 'RoomCategoryController::edit/$1');
+    $routes->post('room_categories/update/(:num)', 'RoomCategoryController::update/$1');
+    $routes->get('room_categories/delete/(:num)', 'RoomCategoryController::delete/$1');
+
+    //Room
     $routes->get('rooms', 'RoomController::index');
     $routes->get('rooms/create', 'RoomController::create');
-    $routes->add('rooms/store', 'RoomController::store');
+    $routes->post('rooms/store', 'RoomController::store');
 });
 /*
  * --------------------------------------------------------------------

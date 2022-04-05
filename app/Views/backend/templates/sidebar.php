@@ -12,8 +12,8 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Rooms</span></a>
                 <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/internal/room_categories">Room Categories</a></li>
                     <li><a class="nav-link" href="/internal/rooms">Room Lists</a></li>
-                    <li><a class="nav-link" href="index.html">Room Categories</a></li>
                     <li><a class="nav-link" href="index.html">Room Images</a></li>
                 </ul>
             </li>

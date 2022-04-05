@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/components.css') ?>">
     <script src="https://cdn.tiny.cloud/1/539lc6i6yslut2hyntxzu7933hwinyhuylydlefnhuyltybr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>

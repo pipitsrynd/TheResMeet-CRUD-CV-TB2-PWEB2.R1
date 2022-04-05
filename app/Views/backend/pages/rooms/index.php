@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>Room Lists</h1>
+            <h1><?= count($rooms); ?> Room Lists</h1>
         </div>
 
         <div class="row">
@@ -28,7 +28,7 @@
                             <table class="table table-striped" id="datatable">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
+                                    <th>No</th>
                                     <th>Name</th>
                                     <th>Slug</th>
                                     <th>Description</th>

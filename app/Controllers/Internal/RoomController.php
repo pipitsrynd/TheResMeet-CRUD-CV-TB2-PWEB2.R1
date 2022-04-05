@@ -28,7 +28,6 @@ class RoomController extends BaseController
 
     public function store(){
         $slug = url_title($this->request->getVar('name'),'-',true);
-//        dd($this->request->getVar());
         $this->roomModel->save([
             'name' => $this->request->getVar('name'),
             'slug' => $slug,

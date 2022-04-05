@@ -1,0 +1,25 @@
+CRITICAL - 2022-04-05 14:03:42 --> Invalid file: backend/pages/room_categories.php
+#0 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/View/View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend/pages/r...')
+#1 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Common.php(1089): CodeIgniter\View\View->render('backend/pages/r...', Array, true)
+#2 /Applications/MAMP/htdocs/meeting_room_reservation/app/Controllers/Internal/RoomCategoryController.php(20): view('backend/pages/r...', Array)
+#3 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(832): App\Controllers\Internal\RoomCategoryController->index()
+#4 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Internal\RoomCategoryController))
+#5 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/MAMP/htdocs/meeting_room_reservation/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/Applications/M...')
+#8 {main}
+CRITICAL - 2022-04-05 14:15:07 --> Too few arguments to function App\Controllers\Internal\RoomCategoryController::edit(), 0 passed in /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php on line 832 and exactly 1 expected
+#0 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(832): App\Controllers\Internal\RoomCategoryController->edit()
+#1 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Internal\RoomCategoryController))
+#2 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Applications/MAMP/htdocs/meeting_room_reservation/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/Applications/M...')
+#5 {main}
+CRITICAL - 2022-04-05 14:34:02 --> Trying to get property 'id' of non-object
+#0 /Applications/MAMP/htdocs/meeting_room_reservation/app/Controllers/Internal/RoomCategoryController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Applications/M...', 55, Array)
+#1 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(832): App\Controllers\Internal\RoomCategoryController->delete('1')
+#2 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Internal\RoomCategoryController))
+#3 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/meeting_room_reservation/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/meeting_room_reservation/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/Applications/M...')
+#6 {main}

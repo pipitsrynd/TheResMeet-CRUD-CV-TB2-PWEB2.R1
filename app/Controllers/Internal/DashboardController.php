@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Internal;
 
+use App\Controllers\BaseController;
 use App\Models\Room;
 use App\Models\RoomCategory;
 use App\Models\RoomImage;
 
-class Home extends BaseController
+class DashboardController extends BaseController
 {
     protected $roomImageModel, $roomModel, $roomCategoryModel;
 

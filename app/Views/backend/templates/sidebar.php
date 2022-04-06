@@ -1,16 +1,18 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="/internal/dashboard">
+                <img src="<?= base_url('assets/logo/internal-logo.png') ?>" class="img-fluid" alt="">
+            </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="/internal/dashboard">TRM</a>
         </div>
-        <ul class="sidebar-menu">
-            <li class="active"><a class="nav-link" href="#"><i class="far fa-square"></i> <span>Dashboard</span></a></li>
+        <ul class="sidebar-menu" style="margin-top:20%;">
+            <li><a class="nav-link" href="/internal/dashboard"><i class="far fa-square"></i> <span>Dashboard</span></a></li>
             <li class="menu-header">Menu</li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Rooms</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fa fa-door-open"></i><span>Rooms</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="/internal/room_categories">Room Categories</a></li>
                     <li><a class="nav-link" href="/internal/rooms">Room Lists</a></li>

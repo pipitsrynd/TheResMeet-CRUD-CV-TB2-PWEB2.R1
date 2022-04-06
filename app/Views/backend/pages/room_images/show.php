@@ -26,7 +26,7 @@
                             </center>
                             <div class="row" style="margin-bottom:30px;margin-top:30px;">
                                 <?php foreach($images as $key => $image): ?>
-                                    <div class="col-3" style="margin-bottom:30px;">
+                                    <div class="col-lg-3 col-xs-12 col-sm-6 col-md-6" style="margin-bottom:30px;">
                                         <a href="<?= base_url('uploads/room_images/'.$image['image_name']) ?>" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
                                             <img src="<?= base_url('uploads/room_images/'.$image['image_name']) ?>" class="img-fluid rounded">
                                         </a>

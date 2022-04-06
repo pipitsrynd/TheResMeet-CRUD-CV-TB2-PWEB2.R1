@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function($routes){
+    $routes->get('dashboard','DashboardController::index');
+
     //Room Category
     $routes->get('room_categories','RoomCategoryController::index');
     $routes->get('room_categories/create', 'RoomCategoryController::create');

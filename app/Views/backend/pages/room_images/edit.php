@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-lg-2 col-xs-12 col-sm-6 col-md-2">
                                 Current Images
                             </div>
                             <div class="col-10">
@@ -52,7 +52,7 @@
                                         </center>
                                     <?php }else{ ?>
                                         <?php foreach ($room_images as $key => $room_image): ?>
-                                            <div class="col-3" style="margin-bottom:30px;">
+                                            <div class="col-lg-3 col-xs-12 col-sm-6 col-md-3" style="margin-bottom:30px;">
                                                 <img src="<?= base_url('uploads/room_images/'.$room_image['image_name']) ?>" class="img-fluid" alt="">
                                                 <a href="/internal/room_images/deleteImageById/<?= $room_image['id'] ?>" class="btn btn-danger btn-block btn-delete" data-id="<?= $room_image['id'] ?>">Delete</a>
                                             </div>
@@ -62,8 +62,8 @@
                             </div>
                         </div>
                         <div class="row mb-5">
-                            <div class="col-9"></div>
-                            <div class="col-3 d-flex justify-content-end" style="margin-top: 5%;">
+                            <div class="col-lg-9 col-xs-12 col-sm-6 col-md-9"></div>
+                            <div class="col-lg-3 col-xs-12 col-sm-6 col-md-3 d-flex justify-content-end" style="margin-top: 5%;">
                                 <button class="btn btn-info btn-lg btn-block">Update</button>
                             </div>
                         </div>

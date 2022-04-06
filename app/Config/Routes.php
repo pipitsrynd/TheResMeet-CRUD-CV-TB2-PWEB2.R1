@@ -48,6 +48,16 @@ $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function
     $routes->get('rooms/edit/(:num)', 'RoomController::edit/$1');
     $routes->post('rooms/update/(:num)', 'RoomController::update/$1');
     $routes->get('rooms/delete/(:num)', 'RoomController::delete/$1');
+
+    //Room Image
+    $routes->get('room_images', 'RoomImageController::index');
+    $routes->get('room_images/create', 'RoomImageController::create');
+    $routes->post('room_images/store', 'RoomImageController::store');
+    $routes->get('room_images/edit/(:num)', 'RoomImageController::edit/$1');
+    $routes->get('room_images/show-images/(:num)', 'RoomImageController::show/$1');
+    $routes->post('room_images/update/(:num)', 'RoomImageController::update/$1');
+    $routes->get('room_images/deleteImageById/(:num)', 'RoomImageController::deleteImageById/$1');
+    $routes->get('room_images/deleteAllImages/(:num)', 'RoomImageController::deleteAllImages/$1');
 });
 /*
  * --------------------------------------------------------------------

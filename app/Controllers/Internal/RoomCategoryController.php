@@ -22,10 +22,23 @@ class RoomCategoryController extends BaseController
     }
 
     public function create(){
-        return view('backend/pages/room_categories/create');
+        return view('backend/pages/room_categories/create',[
+            'validation'=>\Config\Services::validation()
+        ]);
     }
 
     public function store(){
+        if (! $this->validate([
+            'name' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Category name cannot be empty'
+                ]
+            ],
+        ])){
+            $validation =  \Config\Services::validation();
+            return redirect()->to('internal/room_categories/create')->withInput()->with('validation',$validation);
+        }
         $this->roomCategoryModel->save([
             'name' => $this->request->getVar('name'),
         ]);
@@ -36,11 +49,23 @@ class RoomCategoryController extends BaseController
     public function edit($id){
         $room_category = $this->roomCategoryModel->find($id);
         return view('backend/pages/room_categories/edit',[
-            'room_category'=>$room_category
+            'room_category'=>$room_category,
+            'validation'=>\Config\Services::validation()
         ]);
     }
 
     public function update($id){
+        if (! $this->validate([
+            'name' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Category name cannot be empty'
+                ]
+            ],
+        ])){
+            $validation =  \Config\Services::validation();
+            return redirect()->to('internal/room_categories/edit/'.$id)->withInput()->with('validation',$validation);
+        }
         $this->roomCategoryModel->update($id,[
            'name'=> $this->request->getVar('name')
         ]);

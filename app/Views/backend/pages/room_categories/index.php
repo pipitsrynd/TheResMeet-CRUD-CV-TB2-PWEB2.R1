@@ -1,11 +1,6 @@
 <?= $this->extend('backend/main') ?>
 
 <?= $this->section('content') ?>
-<style>
-    .white{
-        color:white;
-    }
-</style>
 
 <section class="section">
     <div class="section-header">
@@ -21,14 +16,7 @@
                             <a href="/internal/room_categories/create" class="btn btn-info">Create Category</a>
                         </div>
                     </div>
-                    <?php if(session()->getFlashData('success')){ ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <?= session()->getFlashData('success') ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php } ?>
+                    <?= $this->include('backend/includes/alert'); ?>
                     <div class="table-responsive">
                         <table class="table table-striped" id="datatable">
                             <thead>

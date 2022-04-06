@@ -16,14 +16,7 @@
                                 <a href="/internal/rooms/create" class="btn btn-info">Create Room</a>
                             </div>
                         </div>
-                        <?php if(session()->getFlashData('success')){ ?>
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <?= session()->getFlashData('success') ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        <?php } ?>
+                        <?= $this->include('backend/includes/alert'); ?>
                         <div class="table-responsive">
                             <table class="table table-striped" id="datatable">
                                 <thead>

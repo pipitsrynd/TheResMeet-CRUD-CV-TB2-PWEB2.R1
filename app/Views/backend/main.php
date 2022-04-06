@@ -16,6 +16,10 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/components.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/dropify/css/dropify.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/fileinput/css/fileinput.css') ?>">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css" rel="stylesheet" />
+
     <script src="https://cdn.tiny.cloud/1/539lc6i6yslut2hyntxzu7933hwinyhuylydlefnhuyltybr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
@@ -44,6 +48,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="<?= base_url('assets/js/stisla.js') ?>"></script>
+<script src="<?= base_url('assets/dropify/js/dropify.js') ?>"></script>
+<script src="<?= base_url('assets/fileinput/js/fileinput.js') ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
 
 <!-- JS Libraies -->
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

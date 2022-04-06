@@ -20,30 +20,42 @@
                         <div class="form-group row mt-5">
                             <label for="name" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
-                                <input type="text" name="name" class="form-control" id="name" value="<?= $room['name'] ?>" placeholder="Room Name">
+                                <input type="text" name="name" class="form-control <?= ($validation->hasError('name')) ? 'is-invalid' : '' ?>" id="name" value="<?= $room['name'] ?>" placeholder="Room Name">
+                                <div class="invalid-feedback font-size-invalid-feedback">
+                                    <?= $validation->getError('name') ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="num_person" class="col-sm-2 col-form-label">Number of Person</label>
                             <div class="col-sm-10">
-                                <input type="number" min="1" max="99" name="num_person" class="form-control" id="num_person" value="<?= $room['num_person'] ?>" placeholder="10">
+                                <input type="number" min="1" max="99" name="num_person" class="form-control <?= ($validation->hasError('num_person')) ? 'is-invalid' : '' ?>" id="num_person" value="<?= $room['num_person'] ?>" placeholder="10">
+                                <div class="invalid-feedback font-size-invalid-feedback">
+                                    <?= $validation->getError('num_person') ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="description" class="col-sm-2 col-form-label">Description</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="description" id="description" style="height:300px;"><?= $room['description'] ?></textarea>
+                                <textarea class="form-control <?= ($validation->hasError('description')) ? 'is-invalid' : '' ?>" name="description" id="description" style="height:300px;"><?= $room['description'] ?></textarea>
+                                <div class="invalid-feedback font-size-invalid-feedback">
+                                    <?= $validation->getError('description') ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="room_category_id" class="col-sm-2 col-form-label">Room Category</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="room_category_id" id="exampleFormControlSelect1">
+                                <select class="form-control <?= ($validation->hasError('room_category_id')) ? 'is-invalid' : '' ?>" name="room_category_id" id="exampleFormControlSelect1">
                                     <option value="" selected disabled>-- Choose Category --</option>
                                     <?php foreach($categories as $key => $category) : ?>
-                                        <option value="<?= $category['id'] ?>" <?= $category['id'] == $room['room_category_id'] ? 'selected' : '' ?> ><?= $category['name'] ?></option>
+                                        <option value="<?= $category['id'] ?>" <?= $category['id'] == $room['room_category_id'] ? 'selected' : '' ?>><?= $category['name'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
+                                <div class="invalid-feedback font-size-invalid-feedback">
+                                    <?= $validation->getError('room_category_id') ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-5">

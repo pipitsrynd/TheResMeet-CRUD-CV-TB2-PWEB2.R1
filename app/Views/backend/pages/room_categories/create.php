@@ -20,7 +20,10 @@
                         <div class="form-group row mt-5">
                             <label for="name" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
-                                <input type="text" name="name" class="form-control" id="name" value="" placeholder="Room Name">
+                                <input type="text" name="name" class="form-control <?= ($validation->hasError('name')) ? 'is-invalid' : '' ?>" id="name" value="" placeholder="Category Name">
+                                <div class="invalid-feedback font-size-invalid-feedback">
+                                    <?= $validation->getError('name') ?>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-5">

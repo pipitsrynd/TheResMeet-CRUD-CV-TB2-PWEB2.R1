@@ -14,7 +14,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="/internal/room_categories">Room Categories</a></li>
                     <li><a class="nav-link" href="/internal/rooms">Room Lists</a></li>
-                    <li><a class="nav-link" href="index.html">Room Images</a></li>
+                    <li><a class="nav-link" href="/internal/room_images">Room Images</a></li>
                 </ul>
             </li>
         </ul>

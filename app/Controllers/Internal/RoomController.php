@@ -35,11 +35,44 @@ class RoomController extends BaseController
     public function create(){
         $categories = $this->roomCategoryModel->findAll();
         return view('backend/pages/rooms/create',[
-            'categories'=>$categories
+            'categories'=>$categories,
+            'validation'=>\Config\Services::validation()
         ]);
     }
 
     public function store(){
+
+        if (! $this->validate([
+            'name' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Room name cannot be empty'
+                ]
+            ],
+            'num_person' => [
+                'rules'=>'required|numeric',
+                'errors'=>[
+                    'required'=>'Num of person cannot be empty',
+                    'numeric'=>'Num of person must a numeric'
+                ]
+            ],
+            'description' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Description cannot be empty'
+                ]
+            ],
+            'room_category_id' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Room category cannot be empty'
+                ]
+            ],
+        ])){
+            $validation =  \Config\Services::validation();
+            return redirect()->to('internal/rooms/create')->withInput()->with('validation',$validation);
+        }
+
         $slug = url_title($this->request->getVar('name'),'-',true);
         $this->roomModel->save([
             'name' => $this->request->getVar('name'),
@@ -58,10 +91,41 @@ class RoomController extends BaseController
         return view('backend/pages/rooms/edit',[
             'categories' => $categories,
             'room' => $room,
+            'validation'=>\Config\Services::validation()
         ]);
     }
 
     public function update($id){
+        if (! $this->validate([
+            'name' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Room name cannot be empty'
+                ]
+            ],
+            'num_person' => [
+                'rules'=>'required|numeric',
+                'errors'=>[
+                    'required'=>'Num of person cannot be empty',
+                    'numeric'=>'Num of person must a numeric'
+                ]
+            ],
+            'description' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Description cannot be empty'
+                ]
+            ],
+            'room_category_id' => [
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Room category cannot be empty'
+                ]
+            ],
+        ])){
+            $validation =  \Config\Services::validation();
+            return redirect()->to('internal/rooms/edit/'.$id)->withInput()->with('validation',$validation);
+        }
         $slug = url_title($this->request->getVar('name'),'-',true);
         $this->roomModel->update($id,[
             'name' => $this->request->getVar('name'),

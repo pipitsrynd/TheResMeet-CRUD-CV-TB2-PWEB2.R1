@@ -22,9 +22,9 @@ class RoomCategoryController extends BaseController
     }
 
     public function create(){
-        return view('backend/pages/room_categories/create',[
-            'validation'=>\Config\Services::validation()
-        ]);
+            return view('backend/pages/room_categories/create',[
+                'validation'=>\Config\Services::validation()
+            ]);
     }
 
     public function store(){

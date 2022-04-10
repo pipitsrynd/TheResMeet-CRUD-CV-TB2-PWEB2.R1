@@ -1,7 +1,7 @@
 <?= $this->extend('backend/main') ?>
 
 <?= $this->section('content') ?>
-    <div class="row">
+<div class="row">
     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
@@ -43,6 +43,43 @@
                 </div>
                 <div class="card-body">
                     <?= $room_images ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4>
+                    list_reservation
+                </h4>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="datatable">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>user_name</th>
+                                <th>room_name</th>
+                                <th>time_start</th>
+                                <th>time_end</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($reservations as $key => $reservation) : ?>
+                                <tr>
+                                    <td><?= $key + 1 ?></td>
+                                    <td><?= $reservation['user_name'] ?></td>
+                                    <td><?= $reservation['room_name'] ?></td>
+                                    <td><?= $reservation['time_start'] ?></td>
+                                    <td><?= $reservation['time_end'] ?></td>
+                                    <td><?= $reservation['status'] ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

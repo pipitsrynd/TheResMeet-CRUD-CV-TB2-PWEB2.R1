@@ -19,6 +19,13 @@
                     <li><a class="nav-link" href="/internal/room_images">Room Images</a></li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fa fa-users"></i><span>Actors</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/internal/users">Users</a></li>
+                </ul>
+            </li>
+
         </ul>
     </aside>
 </div>

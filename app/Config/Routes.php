@@ -60,6 +60,14 @@ $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function
     $routes->post('room_images/update/(:num)', 'RoomImageController::update/$1');
     $routes->get('room_images/deleteImageById/(:num)', 'RoomImageController::deleteImageById/$1');
     $routes->get('room_images/deleteAllImages/(:num)', 'RoomImageController::deleteAllImages/$1');
+
+    //Users
+    $routes->get('users', 'UserController::index');
+    $routes->get('users/create', 'UserController::create');
+    $routes->post('users/store', 'UserController::store');
+    $routes->get('users/edit/(:num)', 'UserController::edit/$1');
+    $routes->post('users/update/(:num)', 'UserController::update/$1');
+    $routes->get('users/delete/(:num)', 'UserController::delete/$1');
 });
 /*
  * --------------------------------------------------------------------

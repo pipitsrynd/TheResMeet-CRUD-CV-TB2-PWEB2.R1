@@ -68,6 +68,14 @@ $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function
     $routes->get('users/edit/(:num)', 'UserController::edit/$1');
     $routes->post('users/update/(:num)', 'UserController::update/$1');
     $routes->get('users/delete/(:num)', 'UserController::delete/$1');
+
+    //Employees
+    $routes->get('employees', 'EmployeeController::index');
+    $routes->get('employees/create', 'EmployeeController::create');
+    $routes->post('employees/store', 'EmployeeController::store');
+    $routes->get('employees/edit/(:num)', 'EmployeeController::edit/$1');
+    $routes->post('employees/update/(:num)', 'EmployeeController::update/$1');
+    $routes->get('employees/delete/(:num)', 'EmployeeController::delete/$1');
 });
 /*
  * --------------------------------------------------------------------

@@ -24,6 +24,9 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="/internal/users">Users</a></li>
                 </ul>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/internal/employees">Employees</a></li>
+                </ul>
             </li>
 
         </ul>

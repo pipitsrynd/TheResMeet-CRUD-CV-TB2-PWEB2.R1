@@ -1,5 +1,9 @@
 <?= $this->extend('backend/main') ?>
 
+<?= $this->section('title') ?>
+    Room Image Lists
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 
     <section class="section">

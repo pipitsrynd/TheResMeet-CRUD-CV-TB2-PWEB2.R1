@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="room_category_id" class="col-sm-2 col-form-label">Room Category</label>
                             <div class="col-sm-10">
                                 <select class="form-control <?= ($validation->hasError('room_category_id')) ? 'is-invalid' : '' ?>" name="room_category_id" id="exampleFormControlSelect1">
@@ -61,7 +61,7 @@
                                     <?= $validation->getError('room_category_id') ?>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row mb-5">
                             <div class="col-9"></div>
                             <div class="col-3 d-flex justify-content-end">

@@ -1,5 +1,9 @@
 <?= $this->extend('backend/main') ?>
 
+<?= $this->section('title') ?>
+    Dashboard
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 <div class="row">
     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -53,18 +57,18 @@
         <div class="card">
             <div class="card-body">
                 <h4>
-                    list_reservation
+                    Today Reservations List
                 </h4>
                 <div class="table-responsive">
                     <table class="table table-striped" id="datatable">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>user_name</th>
-                                <th>room_name</th>
-                                <th>time_start</th>
-                                <th>time_end</th>
-                                <th>status</th>
+                                <th>User Name</th>
+                                <th>Room Name</th>
+                                <th>Time Start</th>
+                                <th>Time End</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>

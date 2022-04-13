@@ -3,27 +3,27 @@
 namespace App\Controllers\Internal;
 
 use App\Controllers\BaseController;
-use App\Models\User;
+use App\Models\Employee;
 
-class UserController extends BaseController
-
+class EmployeeController extends BaseController
 {
-    protected $usersModel;
+    protected $employeeModel;
 
     public function __construct()
     {
-        $this->usersModel = new User();
+        $this->employeeModel = new Employee();
     }
     public function index()
     {
-        $users = $this->usersModel->findAll();
-        return view('backend/pages/users/index', [
-            'users' => $users
+        $employees = $this->employeeModel->findAll();
+        return view('backend/pages/employees/index', [
+            'employees' => $employees
         ]);
     }
     public function create()
     {
-        return view('backend/pages/users/create', [
+        $employees = $this->employeeModel->findAll();
+        return view('backend/pages/employees/create', [
             'validation' => \Config\Services::validation()
         ]);
     }
@@ -33,7 +33,13 @@ class UserController extends BaseController
             'name' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Name cannot be empty'
+                    'required' => 'Employee name cannot be empty'
+                ]
+            ],
+            'Jobdesk' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jobdesk cannot be empty'
                 ]
             ],
             'email' => [
@@ -58,31 +64,29 @@ class UserController extends BaseController
 
         ])) {
             $validation =  \Config\Services::validation();
-            //            dd($validation);
-            return redirect()->to('internal/users/create')->withInput()->with('validation', $validation);
+            return redirect()->to('internal/employees/create')->withInput()->with('validation', $validation);
         }
 
         $file = $this->request->getFile('avatar');
         if ($file->isValid() && !$file->hasMoved()) {
             $filename = $file->getRandomName();
             $file->move('uploads/avatar_users/', $filename);
-            $this->usersModel->save([
+            $this->employeeModel->save([
                 'name' => $this->request->getVar('name'),
+                'Jobdesk' => $this->request->getVar('Jobdesk'),
                 'email' => $this->request->getVar('email'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                 'phone_number' => $this->request->getVar('phone_number'),
                 'avatar' => $filename
             ]);
         }
-
-        return redirect()->to('internal/users')->with('success', 'Data Added Successfully');
+        return redirect()->to('internal/employees')->with('success', 'Data Added Successfully');
     }
-
     public function edit($id)
     {
-        $user = $this->usersModel->find($id);
-        return view('backend/pages/users/edit', [
-            'user' => $user,
+        $employee = $this->employeeModel->find($id);
+        return view('backend/pages/employees/edit', [
+            'employee' => $employee,
             'validation' => \Config\Services::validation()
         ]);
     }
@@ -95,6 +99,12 @@ class UserController extends BaseController
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Name cannot be empty'
+                ]
+            ],
+            'Jobdesk' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jobdesk cannot be empty'
                 ]
             ],
             'email' => [
@@ -115,15 +125,15 @@ class UserController extends BaseController
         ])) {
             $validation =  \Config\Services::validation();
             //            dd($validation);
-            return redirect()->to('internal/users/edit/' . $id)->withInput()->with('validation', $validation);
+            return redirect()->to('internal/employees/edit/' . $id)->withInput()->with('validation', $validation);
         }
 
         $file = $this->request->getFile('avatar');
-        $user = $this->usersModel->find($id);
+        $employee = $this->employeeModel->find($id);
         $data = [
             'name' => $this->request->getVar('name'),
             'email' => $this->request->getVar('email'),
-            'password' => $this->request->getVar('password') ? password_hash($this->request->getVar('password'), PASSWORD_DEFAULT) : $user['password'],
+            'password' => $this->request->getVar('password') ? password_hash($this->request->getVar('password'), PASSWORD_DEFAULT) : $employee['password'],
             'phone_number' => $this->request->getVar('phone_number')
         ];
 
@@ -132,22 +142,22 @@ class UserController extends BaseController
 
                 $filename = $file->getRandomName();
                 $data['avatar'] = $filename;
-                unlink('uploads/avatar_users/' . $user['avatar']);
+                unlink('uploads/avatar_users/' . $employee['avatar']);
                 $file->move('uploads/avatar_users/', $filename);
             }
         }
-        $this->usersModel->update($id, $data);
+        $this->employeeModel->update($id, $data);
 
-        return redirect()->to('internal/users')->with('success', 'Data Updated Successfully');
+        return redirect()->to('internal/employees')->with('success', 'Data Updated Successfully');
     }
 
     public function delete($id)
     {
-        $user = $this->usersModel->find($id);
+        $employee = $this->employeeModel->find($id);
 
-        if ($user) {
+        if ($employee) {
             //            unlink('uploads/avatar_users/'.$user['avatar']);
-            $this->usersModel->delete($id);
+            $this->employeeModel->delete($id);
         }
 
         return redirect()->back()->with('success', 'User Deleted Successfully');

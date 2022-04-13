@@ -31,12 +31,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->group("internal", ["namespace" => "App\Controllers\Internal"], function($routes){
-    $routes->get('dashboard','DashboardController::index');
+$routes->get('/', 'Internal/DashboardController::index');
+
+$routes->group("internal", ["namespace" => "App\Controllers\Internal"], function ($routes) {
+    $routes->get('dashboard', 'DashboardController::index');
 
     //Room Category
-    $routes->get('room_categories','RoomCategoryController::index');
+    $routes->get('room_categories', 'RoomCategoryController::index');
     $routes->get('room_categories/create', 'RoomCategoryController::create');
     $routes->post('room_categories/store', 'RoomCategoryController::store');
     $routes->get('room_categories/edit/(:num)', 'RoomCategoryController::edit/$1');

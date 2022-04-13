@@ -62,24 +62,32 @@ class RoomController extends BaseController
                     'required'=>'Description cannot be empty'
                 ]
             ],
-            'room_category_id' => [
-                'rules'=>'required',
-                'errors'=>[
-                    'required'=>'Room category cannot be empty'
-                ]
-            ],
+
         ])){
             $validation =  \Config\Services::validation();
             return redirect()->to('internal/rooms/create')->withInput()->with('validation',$validation);
         }
-
+        $categorysmall = $this->roomCategoryModel->where('name','Small')->first();
+        $categorymedium = $this->roomCategoryModel->where('name','Medium')->first();
+        $categorylarge = $this->roomCategoryModel->where('name','Large')->first();
+        if ($this->request->getVar('num_person') <=10)
+            {
+                $roomcategory = $categorysmall['id'];
+            }
+        elseif ($this->request->getVar('num_person') >10 && $this->request->getVar('num_person') <=15)
+            {
+                $roomcategory = $categorymedium['id'];
+            }
+        else {
+            $roomcategory = $categorylarge['id'];
+        }
         $slug = url_title($this->request->getVar('name'),'-',true);
         $this->roomModel->save([
             'name' => $this->request->getVar('name'),
             'slug' => $slug,
             'description' => $this->request->getVar('description'),
             'num_person' => $this->request->getVar('num_person'),
-            'room_category_id' => $this->request->getVar('room_category_id')
+            'room_category_id' => $roomcategory
         ]);
 
         return redirect()->to('internal/rooms')->with('success','Data Added Successfully');
@@ -116,15 +124,24 @@ class RoomController extends BaseController
                     'required'=>'Description cannot be empty'
                 ]
             ],
-            'room_category_id' => [
-                'rules'=>'required',
-                'errors'=>[
-                    'required'=>'Room category cannot be empty'
-                ]
-            ],
+ 
         ])){
             $validation =  \Config\Services::validation();
             return redirect()->to('internal/rooms/edit/'.$id)->withInput()->with('validation',$validation);
+        }
+        $categorysmall = $this->roomCategoryModel->where('name','Small')->first();
+        $categorymedium = $this->roomCategoryModel->where('name','Medium')->first();
+        $categorylarge = $this->roomCategoryModel->where('name','Large')->first();
+        if ($this->request->getVar('num_person') <=10)
+            {
+                $roomcategory = $categorysmall['id'];
+            }
+        elseif ($this->request->getVar('num_person') >10 && $this->request->getVar('num_person') <=15)
+            {
+                $roomcategory = $categorymedium['id'];
+            }
+        else {
+            $roomcategory = $categorylarge['id'];
         }
         $slug = url_title($this->request->getVar('name'),'-',true);
         $this->roomModel->update($id,[
@@ -132,7 +149,7 @@ class RoomController extends BaseController
             'slug' => $slug,
             'description' => $this->request->getVar('description'),
             'num_person' => $this->request->getVar('num_person'),
-            'room_category_id' => $this->request->getVar('room_category_id')
+            'room_category_id' => $roomcategory
         ]);
 
         return redirect()->to('internal/rooms')->with('success','Data Updated Successfully');

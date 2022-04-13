@@ -7,6 +7,7 @@ use App\Models\Reservation;
 use App\Models\Room;
 use App\Models\RoomCategory;
 use App\Models\RoomImage;
+use CodeIgniter\I18n\Time;
 
 class DashboardController extends BaseController
 {
@@ -21,6 +22,9 @@ class DashboardController extends BaseController
     }
     public function index()
     {
+//        dd(session()->get());
+        $today = Time::today('Asia/Jakarta')->toDateTimeString();
+        $tomorrow = Time::tomorrow('Asia/Jakarta')->toDateTimeString();
         $rooms = $this->roomModel->findAll();
         $room_categories = $this->roomCategoryModel->findAll();
         $room_images = $this->roomImageModel->findAll();
@@ -28,7 +32,8 @@ class DashboardController extends BaseController
             ->join('users', 'users.id=reservations.user_id')
             ->select([
                 'reservations.*', 'rooms.name as room_name', 'users.name as user_name'
-            ])->findAll();
+            ])->where('reservations.created_at >=',$today)->findAll();
+        
         return view('backend/dashboard', [
             'rooms' => count($rooms),
             'room_categories' => count($room_categories),

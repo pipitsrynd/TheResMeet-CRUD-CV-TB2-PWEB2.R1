@@ -27,6 +27,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
+                                <th>Images</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -35,6 +36,9 @@
                                 <tr>
                                     <td><?= $key+1 ?></td>
                                     <td><?= $category['name'] ?></td>
+                                    <td>
+                                        <img width="150" height="150" src="<?= base_url('uploads/category_images/'. $category['images']) ?>" class="img-fluid" alt="category image">
+                                    </td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <a href="/internal/room_categories/edit/<?= $category['id'] ?>" class="btn btn-warning white">Edit</a>

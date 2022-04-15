@@ -31,7 +31,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Internal/DashboardController::index');
+
+$routes->get('/', 'Frontend\HomePageController::index');
+$routes->get('rooms','Frontend\RoomController::index');
+$routes->post('rooms/reservation','Frontend\RoomController::book');
+$routes->get('rooms/detail/(:any)','Frontend\RoomController::roomDetail/$1');
+$routes->get('rooms/category/(:num)','Frontend\RoomController::filterCategory/$1');
+$routes->post('signup','Frontend\AuthController::signup');
 
 $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function ($routes) {
     $routes->get('dashboard', 'DashboardController::index', ['filter' => 'authAdmin']);

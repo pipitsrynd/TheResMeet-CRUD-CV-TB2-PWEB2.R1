@@ -17,13 +17,15 @@ class Home extends BaseController
     }
     public function index()
     {
-        $rooms = $this->roomModel->findAll();
-        $room_categories = $this->roomCategoryModel->findAll();
-        $room_images = $this->roomImageModel->findAll();
-        return view('backend/dashboard',[
-            'rooms'=>count($rooms),
-            'room_categories'=>count($room_categories),
-            'room_images'=>count($room_images),
-        ]);
+//        $rooms = $this->roomModel->findAll();
+//        $room_categories = $this->roomCategoryModel->findAll();
+//        $room_images = $this->roomImageModel->findAll();
+//        return view('backend/dashboard',[
+//            'rooms'=>count($rooms),
+//            'room_categories'=>count($room_categories),
+//            'room_images'=>count($room_images),
+//        ]);
+
+        return view('frontend/pages/index');
     }
 }

@@ -39,9 +39,15 @@ class RoomCategoryController extends BaseController
             $validation =  \Config\Services::validation();
             return redirect()->to('internal/room_categories/create')->withInput()->with('validation',$validation);
         }
-        $this->roomCategoryModel->save([
-            'name' => $this->request->getVar('name'),
-        ]);
+        $file=$this->request->getFile('images');
+        if($file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $file->move('uploads/category_images/', $filename);
+            $this->roomCategoryModel->save([
+                'name' => $this->request->getVar('name'),
+                'images' => $filename
+            ]);
+        }
 
         return redirect()->to('internal/room_categories')->with('success','Data Added Successfully');
     }
@@ -66,9 +72,20 @@ class RoomCategoryController extends BaseController
             $validation =  \Config\Services::validation();
             return redirect()->to('internal/room_categories/edit/'.$id)->withInput()->with('validation',$validation);
         }
-        $this->roomCategoryModel->update($id,[
-           'name'=> $this->request->getVar('name')
-        ]);
+        $data = ['name'=> $this->request->getVar('name')];
+        $category = $this->roomCategoryModel->find($id);
+
+        $file=$this->request->getFile('images');
+        if($file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $data['images'] = $filename;
+            if($category['images'] != null){
+                unlink('uploads/category_images/'.$category['images']);
+            }
+            $file->move('uploads/category_images/', $filename);
+        }
+
+        $this->roomCategoryModel->update($id,$data);
 
         return redirect()->to('internal/room_categories')->with('success','Data Updated Successfully');
     }

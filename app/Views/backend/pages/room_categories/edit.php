@@ -14,7 +14,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="/internal/room_categories/update/<?= $room_category['id'] ?>" method="post">
+                    <form action="/internal/room_categories/update/<?= $room_category['id'] ?>" method="post" enctype="multipart/form-data">
                         <?= csrf_field(); ?>
                         <div class="row">
                             <div class="col-12">
@@ -30,6 +30,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group row mt-5">
+                            <label for="name" class="col-sm-2 col-form-label">Images</label>
+                            <div class="col-sm-10">
+                                <input id="file-demo" type="file" name="images" class="file" data-preview-file-type="any">
+                            </div>
+                        </div>
                         <div class="row mb-5">
                             <div class="col-9"></div>
                             <div class="col-3 d-flex justify-content-end">
@@ -42,5 +48,19 @@
         </div>
     </div>
 </section>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+
+    <script>
+        $("#file-demo").fileinput({
+            showUpload:false,
+            showRemove:true,
+            allowedFileTypes:'image',
+            allowedFileExtensions:['png','jpg','jpeg','jfif','webp'],
+        });
+
+    </script>
 
 <?= $this->endSection() ?>

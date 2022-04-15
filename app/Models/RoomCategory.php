@@ -14,7 +14,7 @@ class RoomCategory extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name'];
+    protected $allowedFields    = ['name','images'];
 
     // Dates
     protected $useTimestamps = true;

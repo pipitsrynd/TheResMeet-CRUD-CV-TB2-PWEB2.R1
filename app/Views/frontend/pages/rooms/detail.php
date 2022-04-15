@@ -94,7 +94,10 @@ Rooms Page
 <?= $this->section('js') ?>
     <script>
         $(document).ready(function () {
-            $('#datatable').DataTable();
+            $('#datatable').DataTable({
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "pageLength": 5
+            });
         });
     </script>
 <?= $this->endSection() ?>

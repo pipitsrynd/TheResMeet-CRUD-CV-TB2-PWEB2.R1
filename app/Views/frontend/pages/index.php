@@ -7,7 +7,7 @@
 <?= $this->section('content') ?>
 
     <section class="wrapper bg-light position-relative min-vh-70 d-lg-flex align-items-center mb-15">
-        <div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50" data-image-src="./frontend/assets/img/photos/about16.jpg">
+        <div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50" data-image-src="<?= base_url('frontend/assets/img/photos/about16.jpg') ?>">
         </div>
         <!--/column -->
         <div class="container">
@@ -37,11 +37,11 @@
                         <div class="col-md-6">
                             <div class="row gx-md-5 gy-5">
                                 <div class="col-md-10 offset-md-2">
-                                    <figure class="rounded"><img src="./frontend/assets/img/photos/ab1.jpg" srcset="./frontend/assets/img/photos/ab1@2x.jpg 2x" alt=""></figure>
+                                    <figure class="rounded"><img src="<?= base_url('frontend/assets/img/photos/ab1.jpg') ?> " srcset="<?= base_url('frontend/assets/img/photos/ab1@2x.jpg') ?>" alt=""></figure>
                                 </div>
                                 <!--/column -->
                                 <div class="col-md-12">
-                                    <figure class="rounded"><img src="./frontend/assets/img/photos/ab2.jpg" srcset="./frontend/assets/img/photos/ab2@2x.jpg 2x" alt=""></figure>
+                                    <figure class="rounded"><img src="<?= base_url('frontend/assets/img/photos/ab2.jpg') ?> " srcset="<?= base_url('frontend/assets/img/photos/ab2@2x.jpg') ?>" alt=""></figure>
                                 </div>
                                 <!--/column -->
                             </div>
@@ -49,7 +49,7 @@
                         </div>
                         <!--/column -->
                         <div class="col-md-6">
-                            <figure class="rounded"><img src="./frontend/assets/img/photos/ab3.jpg" srcset="./frontend/assets/img/photos/ab3@2x.jpg 2x" alt=""></figure>
+                            <figure class="rounded"><img src="<?= base_url('frontend/assets/img/photos/ab3.jpg') ?> " srcset="<?= base_url('frontend/assets/img/photos/ab3@2x.jpg') ?> " alt=""></figure>
                         </div>
                         <!--/column -->
                     </div>
@@ -91,7 +91,7 @@
                 </div>
                 <?php foreach($categories as $key => $category) : ?>
                 <div class="col-md-4">
-                    <figure class="card-img-top overlay overlay1 hover-scale" style="border-radius: 10px;"><a href="#"> <img src="<?= base_url('uploads/category_images/'.$category['images']) ?>" alt="" /></a>
+                    <figure class="card-img-top overlay overlay1 hover-scale" style="border-radius: 10px;"><a href="/rooms/category/<?= $category['id'] ?>"> <img src="<?= base_url('uploads/category_images/'.$category['images']) ?>" alt="" /></a>
                         <figcaption>
                             <h5 class="from-top mb-0">See More</h5>
                         </figcaption>
@@ -129,13 +129,13 @@
                 <div class="col-lg-7">
                     <div class="row gx-md-5 gy-5">
                         <div class="col-md-6">
-                            <figure class="rounded mt-md-10 position-relative"><img src="./frontend/assets/img/photos/g5.jpg" srcset="./frontend/assets/img/photos/g5@2x.jpg 2x" alt=""></figure>
+                            <figure class="rounded mt-md-10 position-relative"><img src="<?= base_url('frontend/assets/img/photos/g5.jpg') ?> " srcset="<?= base_url('frontend/assets/img/photos/g5@2x.jpg') ?> " alt=""></figure>
                         </div>
                         <!--/column -->
                         <div class="col-md-6">
                             <div class="row gx-md-5 gy-5">
                                 <div class="col-md-12 order-md-2">
-                                    <figure class="rounded"><img src="./frontend/assets/img/photos/g6.jpg" srcset="./frontend/assets/img/photos/g6@2x.jpg 2x" alt=""></figure>
+                                    <figure class="rounded"><img src="<?= base_url('frontend/assets/img/photos/g6.jpg') ?> " srcset="<?= base_url('frontend/assets/img/photos/g6@2x.jpg') ?> " alt=""></figure>
                                 </div>
                                 <!--/column -->
                             </div>

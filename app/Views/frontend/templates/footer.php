@@ -22,14 +22,14 @@
                     <div class="col-md-4">
                         <div class="widget">
                             <h4 class="widget-title">E-mail</h4>
-                            <p><a href="mailto:sandbox@email.com" class="link-body">sandbox@email.com</a> <br class="d-none d-md-block" /><a href="mailto:help@sandbox.com" class="link-body">help@sandbox.com</a></p>
+                            <p><a href="mailto:sandbox@email.com" class="link-body">kelompok3@email.com</a> <br class="d-none d-md-block" /><a href="mailto:help@sandbox.com" class="link-body">kelompok3@sandbox.com</a></p>
                         </div>
                         <!-- /.widget -->
                     </div>
                     <!--/column -->
                 </div>
                 <!--/.row -->
-                <p>© 2021 Sandbox. All rights reserved.</p>
+                <p>© <?= date('Y') ?> The ResMeet. All rights reserved.</p>
                 <nav class="nav social justify-content-center">
                     <a href="#"><i class="uil uil-twitter"></i></a>
                     <a href="#"><i class="uil uil-facebook-f"></i></a>

@@ -29,7 +29,7 @@
                         <a href="#" class="btn btn-sm btn-outline-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-01">Sign In</a>
                     </li>
                     <li class="nav-item d-none d-md-block">
-                        <a href="#" class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-01">Sign Up</a>
+                        <a href="#" class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-02">Sign Up</a>
                     </li>
                     <li class="nav-item d-lg-none">
                         <div class="navbar-hamburger"><button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button></div>
@@ -49,7 +49,7 @@
             <div class="modal-body">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <h3 class="mb-4">
-                    Login to The <span style="color:#4a90e2;">ResMeet</span>
+                    Signin to The <span style="color:#4a90e2;">ResMeet</span>
                 </h3>
                 <form class="text-start mb-3">
                     <div class="form-floating mb-4">
@@ -61,6 +61,44 @@
                         <label for="loginPassword">Password</label>
                     </div>
                     <a class="btn btn-primary rounded-pill btn-login w-100 mb-2">Log In</a>
+                </form>
+                <!-- /form -->
+            </div>
+            <!--/.modal-content -->
+        </div>
+        <!--/.modal-body -->
+    </div>
+    <!--/.modal-dialog -->
+</div>
+<!--/.modal -->
+
+<div class="modal fade" id="modal-02" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content text-center">
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h3 class="mb-4">
+                    Signup to The <span style="color:#4a90e2;">ResMeet</span>
+                </h3>
+                <form action="/signup" method="post" class="text-start mb-3">
+                    <?= csrf_field(); ?>
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control" name="email" placeholder="Email" id="loginEmail" required>
+                        <label for="loginEmail">Email</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control" name="password" placeholder="Password" id="loginPassword" required>
+                        <label for="loginPassword">Password</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" name="name" placeholder="name" id="name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" name="phone_number" placeholder="phone_number" id="phone_number" required>
+                        <label for="phone_number">Phone Number</label>
+                    </div>
+                    <button class="btn btn-primary rounded-pill btn-login w-100 mb-2">Log In</button>
                 </form>
                 <!-- /form -->
             </div>

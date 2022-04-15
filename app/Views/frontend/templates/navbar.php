@@ -27,7 +27,10 @@
                 <ul class="navbar-nav flex-row align-items-center ms-auto" data-sm-skip="true">
                     <?php if(session()->get('user_logged_in')) { ?>
                         <li class="nav-item d-none d-md-block">
-                            <a href="#" class="btn btn-sm btn-outline-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-01">Logout</a>
+                            <span>Hi, <?= session()->get('user_name') ?></span>
+                        </li>
+                        <li class="nav-item d-none d-md-block">
+                            <a href="/signout" class="btn btn-sm btn-outline-primary rounded-pill">Logout</a>
                         </li>
                     <?php }else{ ?>
                         <li class="nav-item d-none d-md-block">

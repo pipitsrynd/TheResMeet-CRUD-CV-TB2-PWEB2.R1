@@ -20,6 +20,10 @@
                 </ul>
 
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/internal/reservations"><i class="fa fa-users"></i>Reservation List</a>
+                
+            </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fa fa-users"></i><span>Actors</span></a>
                 <ul class="dropdown-menu">
@@ -28,6 +32,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="/internal/employees">Employees</a></li>
                 </ul>
+            </li>
         </ul>
     </aside>
 </div>

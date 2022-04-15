@@ -75,12 +75,15 @@ $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function
     $routes->get('users/delete/(:num)', 'UserController::delete/$1', ['filter' => 'authAdmin']);
 
     //Employees
-    $routes->get('employees', 'EmployeeController::index', ['filter' => 'authAdmin']);
-    $routes->get('employees/create', 'EmployeeController::create', ['filter' => 'authAdmin']);
-    $routes->post('employees/store', 'EmployeeController::store', ['filter' => 'authAdmin']);
-    $routes->get('employees/edit/(:num)', 'EmployeeController::edit/$1', ['filter' => 'authAdmin']);
-    $routes->post('employees/update/(:num)', 'EmployeeController::update/$1', ['filter' => 'authAdmin']);
-    $routes->get('employees/delete/(:num)', 'EmployeeController::delete/$1', ['filter' => 'authAdmin']);
+    $routes->get('employees', 'EmployeeController::index',['filter'=>'authAdmin']);
+    $routes->get('employees/create', 'EmployeeController::create',['filter'=>'authAdmin']);
+    $routes->post('employees/store', 'EmployeeController::store',['filter'=>'authAdmin']);
+    $routes->get('employees/edit/(:num)', 'EmployeeController::edit/$1',['filter'=>'authAdmin']);
+    $routes->post('employees/update/(:num)', 'EmployeeController::update/$1',['filter'=>'authAdmin']);
+    $routes->get('employees/delete/(:num)', 'EmployeeController::delete/$1',['filter'=>'authAdmin']);
+
+    //Reservation
+    $routes->get('reservations', 'ReservationController::index',['filter'=>'authAdmin']);
 });
 /*
  * --------------------------------------------------------------------

@@ -10,6 +10,7 @@
         <div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50" data-image-src="<?= base_url('frontend/assets/img/photos/about16.jpg') ?>">
         </div>
         <!--/column -->
+        
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">

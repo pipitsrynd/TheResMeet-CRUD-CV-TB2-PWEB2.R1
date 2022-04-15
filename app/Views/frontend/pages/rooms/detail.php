@@ -59,23 +59,22 @@ Rooms Page
                 </div>
                 <hr style="margin:5%;">
                 <div class="row">
+                    <?= $this->include('frontend/includes/alert'); ?>
                     <div class="col-12">
                         <h4>Room reservation form</h4>
                         <form action="/rooms/reservation" method="post">
                             <?= csrf_field(); ?>
 
-                            <div class="form-floating mb-4">
-                                <input id="email" name="email" type="email" class="form-control" placeholder="Email">
-                                <label for="email">Email</label>
-                            </div>
+                            <input type="hidden" name="room_id" value="<?= $room['id'] ?>">
+                            <input type="hidden" name="slug" value="<?= $room['slug'] ?>">
 
                             <div class="form-floating mb-4">
-                                <input id="time_start" name="time_start" type="datetime-local" class="form-control" placeholder="Time Start">
+                                <input id="time_start" name="time_start" type="datetime-local" class="form-control" placeholder="Time Start" required>
                                 <label for="time_start">Time Start</label>
                             </div>
 
                             <div class="form-floating mb-4">
-                                <input id="time_end" name="time_end" type="datetime-local" class="form-control" placeholder="Time End">
+                                <input id="time_end" name="time_end" type="datetime-local" class="form-control" placeholder="Time End" required>
                                 <label for="time_end">Time End</label>
                             </div>
 

@@ -25,12 +25,18 @@
             <!-- /.navbar-collapse -->
             <div class="navbar-other w-100 d-flex ms-auto">
                 <ul class="navbar-nav flex-row align-items-center ms-auto" data-sm-skip="true">
-                    <li class="nav-item d-none d-md-block">
-                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-01">Sign In</a>
-                    </li>
-                    <li class="nav-item d-none d-md-block">
-                        <a href="#" class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-02">Sign Up</a>
-                    </li>
+                    <?php if(session()->get('user_logged_in')) { ?>
+                        <li class="nav-item d-none d-md-block">
+                            <a href="#" class="btn btn-sm btn-outline-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-01">Logout</a>
+                        </li>
+                    <?php }else{ ?>
+                        <li class="nav-item d-none d-md-block">
+                            <a href="#" class="btn btn-sm btn-outline-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-01">Sign In</a>
+                        </li>
+                        <li class="nav-item d-none d-md-block">
+                            <a href="#" class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-02">Sign Up</a>
+                        </li>
+                    <?php } ?>
                     <li class="nav-item d-lg-none">
                         <div class="navbar-hamburger"><button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button></div>
                     </li>
@@ -51,16 +57,17 @@
                 <h3 class="mb-4">
                     Signin to The <span style="color:#4a90e2;">ResMeet</span>
                 </h3>
-                <form class="text-start mb-3">
+                <form class="text-start mb-3" action="/signin" method="post">
+                    <?= csrf_field(); ?>
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control" placeholder="Email" id="loginEmail">
+                        <input type="email" class="form-control" name="email" placeholder="Email" id="loginEmail">
                         <label for="loginEmail">Email</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <input type="password" class="form-control" placeholder="Password" id="loginPassword">
+                        <input type="password" class="form-control" name="password" placeholder="Password" id="loginPassword">
                         <label for="loginPassword">Password</label>
                     </div>
-                    <a class="btn btn-primary rounded-pill btn-login w-100 mb-2">Log In</a>
+                    <button class="btn btn-primary rounded-pill btn-login w-100 mb-2">Log In</button>
                 </form>
                 <!-- /form -->
             </div>

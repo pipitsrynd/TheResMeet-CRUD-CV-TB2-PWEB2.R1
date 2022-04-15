@@ -33,23 +33,31 @@ class AuthController extends BaseController
         if($data){
             $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
+//            dd($verify_pass);
             if($verify_pass){
                 $ses_data = [
-                    'id'       => $data['id'],
+                    'user_id'       => $data['id'],
                     'user_name'     => $data['name'],
                     'user_email'    => $data['email'],
                     'user_avatar'    => $data['avatar'],
-                    'logged_in'=> TRUE
+                    'user_logged_in'=> TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/internal/dashboard');
+                return redirect()->to('/');
             }else{
                 $session->setFlashdata('msg', 'Wrong Password');
-                return redirect()->to('/internal/signin');
+                return redirect()->to('/');
             }
         }else{
             $session->setFlashdata('msg', 'Email not Found');
-            return redirect()->to('/internal/signin');
+            return redirect()->to('/');
         }
+    }
+
+    public function signout()
+    {
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/');
     }
 }

@@ -81,6 +81,9 @@ $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function
     $routes->get('employees/edit/(:num)', 'EmployeeController::edit/$1',['filter'=>'authAdmin']);
     $routes->post('employees/update/(:num)', 'EmployeeController::update/$1',['filter'=>'authAdmin']);
     $routes->get('employees/delete/(:num)', 'EmployeeController::delete/$1',['filter'=>'authAdmin']);
+
+    //Reservation
+    $routes->get('reservations', 'ReservationController::index',['filter'=>'authAdmin']);
 });
 /*
  * --------------------------------------------------------------------

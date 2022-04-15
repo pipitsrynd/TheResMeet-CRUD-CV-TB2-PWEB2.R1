@@ -24,4 +24,32 @@ class AuthController extends BaseController
 
         return redirect()->to('/')->with('message','Signed up successfully');
     }
+
+    public function signin(){
+        $session = session();
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
+        $data = $this->userModel->where('email', $email)->first();
+        if($data){
+            $pass = $data['password'];
+            $verify_pass = password_verify($password, $pass);
+            if($verify_pass){
+                $ses_data = [
+                    'id'       => $data['id'],
+                    'user_name'     => $data['name'],
+                    'user_email'    => $data['email'],
+                    'user_avatar'    => $data['avatar'],
+                    'logged_in'=> TRUE
+                ];
+                $session->set($ses_data);
+                return redirect()->to('/internal/dashboard');
+            }else{
+                $session->setFlashdata('msg', 'Wrong Password');
+                return redirect()->to('/internal/signin');
+            }
+        }else{
+            $session->setFlashdata('msg', 'Email not Found');
+            return redirect()->to('/internal/signin');
+        }
+    }
 }

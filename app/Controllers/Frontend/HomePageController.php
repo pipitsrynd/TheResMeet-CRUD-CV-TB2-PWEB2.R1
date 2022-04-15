@@ -15,6 +15,7 @@ class HomePageController extends BaseController
 
     public function index()
     {
+//        dd(session()->get());
         $categories = $this->categoryModel->findAll();
         return view('frontend/pages/index',[
             'categories' => $categories

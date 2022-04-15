@@ -110,7 +110,15 @@ class RoomController extends BaseController
     }
 
     public function book(){
-        dd("A");
+        $this->reservationModel->save([
+            'room_id' => $this->request->getVar('room_id'),
+            'user_id' => session()->get('user_id'),
+            'time_start' => $this->request->getVar('time_start'),
+            'time_end' => $this->request->getVar('time_end'),
+            'status' => 'booked'
+        ]);
+
+        return redirect()->to('/rooms/detail/'.$this->request->getVar('slug'))->with('success','Booked Successfully');
     }
     
 }

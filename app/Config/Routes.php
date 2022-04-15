@@ -38,6 +38,8 @@ $routes->post('rooms/reservation','Frontend\RoomController::book');
 $routes->get('rooms/detail/(:any)','Frontend\RoomController::roomDetail/$1');
 $routes->get('rooms/category/(:num)','Frontend\RoomController::filterCategory/$1');
 $routes->post('signup','Frontend\AuthController::signup');
+$routes->post('signin','Frontend\AuthController::signin');
+$routes->get('signout', 'Frontend\AuthController::signout');
 
 $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function ($routes) {
     $routes->get('dashboard', 'DashboardController::index', ['filter' => 'authAdmin']);

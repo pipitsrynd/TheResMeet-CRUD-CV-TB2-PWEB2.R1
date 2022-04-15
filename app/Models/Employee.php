@@ -15,7 +15,7 @@ class Employee extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'name','email','password','phone_number','avatar'
+        'name', 'Jobdesk', 'email', 'password', 'phone_number', 'avatar'
     ];
 
     // Dates

@@ -18,6 +18,7 @@
                     <li><a class="nav-link" href="/internal/rooms">Room Lists</a></li>
                     <li><a class="nav-link" href="/internal/room_images">Room Images</a></li>
                 </ul>
+
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/internal/reservations"><i class="fa fa-users"></i>Reservation List</a>

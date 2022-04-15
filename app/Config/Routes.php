@@ -33,46 +33,46 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Internal/DashboardController::index');
 
-$routes->group("internal", ["namespace" => "App\Controllers\Internal"], function($routes){
-    $routes->get('dashboard','DashboardController::index',['filter'=>'authAdmin']);
+$routes->group("internal", ["namespace" => "App\Controllers\Internal"], function ($routes) {
+    $routes->get('dashboard', 'DashboardController::index', ['filter' => 'authAdmin']);
 
-    $routes->get('signin','AuthController::getSignIn');
-    $routes->get('signout','AuthController::getSignout');
-    $routes->post('signin','AuthController::postSignIn');
+    $routes->get('signin', 'AuthController::getSignIn');
+    $routes->get('signout', 'AuthController::getSignout');
+    $routes->post('signin', 'AuthController::postSignIn');
 
     //Room Category
-    $routes->get('room_categories','RoomCategoryController::index',['filter'=>'authAdmin']);
-    $routes->get('room_categories/create', 'RoomCategoryController::create',['filter'=>'authAdmin']);
-    $routes->post('room_categories/store', 'RoomCategoryController::store',['filter'=>'authAdmin']);
-    $routes->get('room_categories/edit/(:num)', 'RoomCategoryController::edit/$1',['filter'=>'authAdmin']);
-    $routes->post('room_categories/update/(:num)', 'RoomCategoryController::update/$1',['filter'=>'authAdmin']);
-    $routes->get('room_categories/delete/(:num)', 'RoomCategoryController::delete/$1',['filter'=>'authAdmin']);
+    $routes->get('room_categories', 'RoomCategoryController::index', ['filter' => 'authAdmin']);
+    $routes->get('room_categories/create', 'RoomCategoryController::create', ['filter' => 'authAdmin']);
+    $routes->post('room_categories/store', 'RoomCategoryController::store', ['filter' => 'authAdmin']);
+    $routes->get('room_categories/edit/(:num)', 'RoomCategoryController::edit/$1', ['filter' => 'authAdmin']);
+    $routes->post('room_categories/update/(:num)', 'RoomCategoryController::update/$1', ['filter' => 'authAdmin']);
+    $routes->get('room_categories/delete/(:num)', 'RoomCategoryController::delete/$1', ['filter' => 'authAdmin']);
 
     //Room
-    $routes->get('rooms', 'RoomController::index',['filter'=>'authAdmin']);
-    $routes->get('rooms/create', 'RoomController::create',['filter'=>'authAdmin']);
-    $routes->post('rooms/store', 'RoomController::store',['filter'=>'authAdmin']);
-    $routes->get('rooms/edit/(:num)', 'RoomController::edit/$1',['filter'=>'authAdmin']);
-    $routes->post('rooms/update/(:num)', 'RoomController::update/$1',['filter'=>'authAdmin']);
-    $routes->get('rooms/delete/(:num)', 'RoomController::delete/$1',['filter'=>'authAdmin']);
+    $routes->get('rooms', 'RoomController::index', ['filter' => 'authAdmin']);
+    $routes->get('rooms/create', 'RoomController::create', ['filter' => 'authAdmin']);
+    $routes->post('rooms/store', 'RoomController::store', ['filter' => 'authAdmin']);
+    $routes->get('rooms/edit/(:num)', 'RoomController::edit/$1', ['filter' => 'authAdmin']);
+    $routes->post('rooms/update/(:num)', 'RoomController::update/$1', ['filter' => 'authAdmin']);
+    $routes->get('rooms/delete/(:num)', 'RoomController::delete/$1', ['filter' => 'authAdmin']);
 
     //Room Image
-    $routes->get('room_images', 'RoomImageController::index',['filter'=>'authAdmin']);
-    $routes->get('room_images/create', 'RoomImageController::create',['filter'=>'authAdmin']);
-    $routes->post('room_images/store', 'RoomImageController::store',['filter'=>'authAdmin']);
-    $routes->get('room_images/edit/(:num)', 'RoomImageController::edit/$1',['filter'=>'authAdmin']);
-    $routes->get('room_images/show-images/(:num)', 'RoomImageController::show/$1',['filter'=>'authAdmin']);
-    $routes->post('room_images/update/(:num)', 'RoomImageController::update/$1',['filter'=>'authAdmin']);
-    $routes->get('room_images/deleteImageById/(:num)', 'RoomImageController::deleteImageById/$1',['filter'=>'authAdmin']);
-    $routes->get('room_images/deleteAllImages/(:num)', 'RoomImageController::deleteAllImages/$1',['filter'=>'authAdmin']);
+    $routes->get('room_images', 'RoomImageController::index', ['filter' => 'authAdmin']);
+    $routes->get('room_images/create', 'RoomImageController::create', ['filter' => 'authAdmin']);
+    $routes->post('room_images/store', 'RoomImageController::store', ['filter' => 'authAdmin']);
+    $routes->get('room_images/edit/(:num)', 'RoomImageController::edit/$1', ['filter' => 'authAdmin']);
+    $routes->get('room_images/show-images/(:num)', 'RoomImageController::show/$1', ['filter' => 'authAdmin']);
+    $routes->post('room_images/update/(:num)', 'RoomImageController::update/$1', ['filter' => 'authAdmin']);
+    $routes->get('room_images/deleteImageById/(:num)', 'RoomImageController::deleteImageById/$1', ['filter' => 'authAdmin']);
+    $routes->get('room_images/deleteAllImages/(:num)', 'RoomImageController::deleteAllImages/$1', ['filter' => 'authAdmin']);
 
     //Users
-    $routes->get('users', 'UserController::index',['filter'=>'authAdmin']);
-    $routes->get('users/create', 'UserController::create',['filter'=>'authAdmin']);
-    $routes->post('users/store', 'UserController::store',['filter'=>'authAdmin']);
-    $routes->get('users/edit/(:num)', 'UserController::edit/$1',['filter'=>'authAdmin']);
-    $routes->post('users/update/(:num)', 'UserController::update/$1',['filter'=>'authAdmin']);
-    $routes->get('users/delete/(:num)', 'UserController::delete/$1',['filter'=>'authAdmin']);
+    $routes->get('users', 'UserController::index', ['filter' => 'authAdmin']);
+    $routes->get('users/create', 'UserController::create', ['filter' => 'authAdmin']);
+    $routes->post('users/store', 'UserController::store', ['filter' => 'authAdmin']);
+    $routes->get('users/edit/(:num)', 'UserController::edit/$1', ['filter' => 'authAdmin']);
+    $routes->post('users/update/(:num)', 'UserController::update/$1', ['filter' => 'authAdmin']);
+    $routes->get('users/delete/(:num)', 'UserController::delete/$1', ['filter' => 'authAdmin']);
 
     //Employees
     $routes->get('employees', 'EmployeeController::index',['filter'=>'authAdmin']);

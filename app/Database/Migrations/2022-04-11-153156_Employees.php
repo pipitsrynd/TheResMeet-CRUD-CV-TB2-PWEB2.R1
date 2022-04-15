@@ -19,8 +19,12 @@ class Employees extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
+            'Jobdesk' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'email' => [
-                'type' =>'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
                 'unique' => true,
                 'null' => true
@@ -51,9 +55,9 @@ class Employees extends Migration
             ]
         ];
         $this->forge->addField($fields);
-//primary key
+        //primary key
         $this->forge->addKey('id', TRUE);
-//nama tabel
+        //nama tabel
         $this->forge->createTable('employees');
     }
 

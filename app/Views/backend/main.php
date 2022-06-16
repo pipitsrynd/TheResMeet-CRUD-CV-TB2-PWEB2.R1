@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="<?= base_url('assets/fileinput/css/fileinput.css') ?>">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css" rel="stylesheet" />
 
-    <script src="https://cdn.tiny.cloud/1/539lc6i6yslut2hyntxzu7933hwinyhuylydlefnhuyltybr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -51,6 +51,8 @@
 <script src="<?= base_url('assets/dropify/js/dropify.js') ?>"></script>
 <script src="<?= base_url('assets/fileinput/js/fileinput.js') ?>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
 
 <!-- JS Libraies -->
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

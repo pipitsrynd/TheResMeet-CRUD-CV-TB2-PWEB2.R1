@@ -36,6 +36,24 @@
                     <li><a class="nav-link" href="/internal/employees">Employees</a></li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fa fa-users"></i><span>Resume</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/internal/resume_personal_informations">Personal Informations</a></li>
+                </ul>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/internal/resume_work_experiences">Work Experiences</a></li>
+                </ul>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/internal/resume_educations">Educations</a></li>
+                </ul>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/internal/resume_organizational_experiences">Organizational</a></li>
+                </ul>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="/internal/generate_resume">Generate Resume</a></li>
+                </ul>
+            </li>
         </ul>
     </aside>
 </div>

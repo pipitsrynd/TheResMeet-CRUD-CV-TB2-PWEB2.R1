@@ -92,6 +92,43 @@ $routes->group("internal", ["namespace" => "App\Controllers\Internal"], function
 
     //Reservation
     $routes->get('reservations', 'ReservationController::index',['filter'=>'authAdmin']);
+
+    // Resume Personal Informations
+    $routes->get('resume_personal_informations/', 'ResumePersonalInformationController::index');
+    $routes->get('resume_personal_informations/create', 'ResumePersonalInformationController::create');
+    $routes->post('resume_personal_informations/store', 'ResumePersonalInformationController::store');
+    $routes->get('resume_personal_informations/edit/(:num)', 'ResumePersonalInformationController::edit/$1');
+    $routes->post('resume_personal_informations/update/(:num)', 'ResumePersonalInformationController::update/$1');
+    $routes->get('resume_personal_informations/delete/(:num)', 'ResumePersonalInformationController::delete/$1');
+
+    // Resume Work Experiences
+    $routes->get('resume_work_experiences/', 'ResumeWorkExperienceController::index');
+    $routes->get('resume_work_experiences/create', 'ResumeWorkExperienceController::create');
+    $routes->post('resume_work_experiences/store', 'ResumeWorkExperienceController::store');
+    $routes->get('resume_work_experiences/edit/(:num)', 'ResumeWorkExperienceController::edit/$1');
+    $routes->post('resume_work_experiences/update/(:num)', 'ResumeWorkExperienceController::update/$1');
+    $routes->get('resume_work_experiences/delete/(:num)', 'ResumeWorkExperienceController::delete/$1');
+
+    // Resume Educations
+    $routes->get('resume_educations/', 'ResumeEducationController::index');
+    $routes->get('resume_educations/create', 'ResumeEducationController::create');
+    $routes->post('resume_educations/store', 'ResumeEducationController::store');
+    $routes->get('resume_educations/edit/(:num)', 'ResumeEducationController::edit/$1');
+    $routes->post('resume_educations/update/(:num)', 'ResumeEducationController::update/$1');
+    $routes->get('resume_educations/delete/(:num)', 'ResumeEducationController::delete/$1');
+
+    // Resume Organizational Experiences
+    $routes->get('resume_organizational_experiences/', 'ResumeOrganizationalExperienceController::index');
+    $routes->get('resume_organizational_experiences/create', 'ResumeOrganizationalExperienceController::create');
+    $routes->post('resume_organizational_experiences/store', 'ResumeOrganizationalExperienceController::store');
+    $routes->get('resume_organizational_experiences/edit/(:num)', 'ResumeOrganizationalExperienceController::edit/$1');
+    $routes->post('resume_organizational_experiences/update/(:num)', 'ResumeOrganizationalExperienceController::update/$1');
+    $routes->get('resume_organizational_experiences/delete/(:num)', 'ResumeOrganizationalExperienceController::delete/$1');
+
+    // Generate Resume
+    $routes->get('generate_resume/','GenerateCVController::index');
+    $routes->get('generate_resume/(:num)','GenerateCVController::generate/$1');
+    $routes->get('download_excel/(:num)','GenerateCVController::export/$1');
 });
 /*
  * --------------------------------------------------------------------
